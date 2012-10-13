@@ -8,6 +8,8 @@ public class Hero implements FreeObject {
 	private int y;
 	private int width;
 	private int height;
+	
+	private Direction direction;
 
 	@Override
 	public int getX() {
@@ -47,5 +49,19 @@ public class Hero implements FreeObject {
 	@Override
 	public void setHeight(int height) {
 		this.height = height;
+	}
+	
+	@Override
+	public boolean usesDirction(){
+		return true;
+	}
+	
+	@Override
+	public Direction getDirection() {
+		return direction;
+	}
+	
+	public void setDirection(Direction direction) {
+		this.direction = direction;
 	}
 }
