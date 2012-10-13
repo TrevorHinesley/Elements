@@ -1,6 +1,6 @@
 package com.hack.elements.model;
 
-public interface FreeObject {
+public interface FreeObject implements Direction {
   public int getX();
   public void setX(int x);
 
@@ -12,4 +12,7 @@ public interface FreeObject {
 
   public int getHeight();
   public void setHeight(int height);
+
+  public Direction getDirection();
+  public void setDirection(Direction d);
 }
