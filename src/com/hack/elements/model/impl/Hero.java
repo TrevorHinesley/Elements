@@ -1,51 +1,51 @@
-package com.hack.element.model.impl
+package com.hack.elements.model.impl;
 
-import com.hack.element.model.Character
+import com.hack.elements.model.Character;
 
 public class Hero implements Character {
-  
-  int x;
-  int y;
-  int width;
-  int height;
 
-  @Override
-  public int getX(){
-    return x;
-  }
+	private int x;
+	private int y;
+	private int width;
+	private int height;
 
-  @Override
-  public void setX(int x) {
-    this.x = x;
-  }
+	@Override
+	public int getX() {
+		return x;
+	}
 
-  @Override
-  public int getY() {
-    return y;
-  }
- 
-  @Override
-  public void setY(int y) {
-    this.y = y;
-  }
+	@Override
+	public void setX(int x) {
+		this.x = x;
+	}
 
-  @Override
-  public int getWidth() {
-    return width;
-  }
+	@Override
+	public int getY() {
+		return y;
+	}
 
-  @Override
-  public void setWidth(int width) {
-    this.width = width;
-  }
+	@Override
+	public void setY(int y) {
+		this.y = y;
+	}
 
-  @Override
-  public int getHeight() {
-    return height;
-  }
+	@Override
+	public int getWidth() {
+		return width;
+	}
 
-  @Override
-  public void setHeight(int height) {
-    this.height = height;
-  }
+	@Override
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	@Override
+	public int getHeight() {
+		return height;
+	}
+
+	@Override
+	public void setHeight(int height) {
+		this.height = height;
+	}
 }
