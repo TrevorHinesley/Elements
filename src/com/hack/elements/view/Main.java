@@ -57,7 +57,6 @@ public class Main extends BasicGame {
 			throws SlickException {
 		FreeObject hero = controller.getModel().getHero();
 		hero.getImage().draw(hero.getX(), hero.getY());
-		map.render(0, 0);
 	}
 
 	@Override
@@ -68,24 +67,24 @@ public class Main extends BasicGame {
 		
         if(input.isKeyDown(Input.KEY_A))
         {
-        	FreeObjectController.move(hero, Direction.WEST, .15f);
+        	FreeObjectController.move(hero, Direction.WEST, 1.4f);
         	hero.setImage(new Image("resources/images/player-L.png"));
         }
         if(input.isKeyDown(Input.KEY_D))
         {
-        	FreeObjectController.move(hero, Direction.EAST, .15f);
+        	FreeObjectController.move(hero, Direction.EAST, 1.4f);
         	hero.setImage(new Image("resources/images/player-R.png"));
         }
  
         if(input.isKeyDown(Input.KEY_W))
         {
-        	FreeObjectController.move(hero, Direction.NORTH, .15f);
+        	FreeObjectController.move(hero, Direction.NORTH, 1.4f);
         	hero.setImage(new Image("resources/images/player-U.png"));
         }
             
         if(input.isKeyDown(Input.KEY_S))
         {
-        	FreeObjectController.move(hero, Direction.SOUTH, .15f);
+        	FreeObjectController.move(hero, Direction.SOUTH, 1.4f);
         	hero.setImage(new Image("resources/images/player-D.png"));
         }
         if(input.isKeyDown(Input.KEY_SPACE))
