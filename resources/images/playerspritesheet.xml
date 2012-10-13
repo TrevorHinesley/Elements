@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spritesheet version="2.0" width="161" height="161">  
+  <background name="161grid" path="./sprites/161grid.png"/>
+  <actor name="numbers">
+    <pose name="3x3">
+      <frame n="1" path="./player-R.png">
+        <position x="0" y="0"/>
+      </frame>
+      <frame n="2" path="./player-L.png">
+        <position x="32" y="0"/>
+      </frame>
+      <frame n="3" path="./player-U.png">
+        <position x="64" y="0"/>
+      </frame>
+      <frame n="4" path="./player-D.png">
+        <position x="0" y="32"/>
+      </frame>
+       
+    </pose>
+  </actor>
+</spritesheet>
