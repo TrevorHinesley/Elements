@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="96" height="96" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="magecity_0" tilewidth="32" tileheight="32">
+  <image source="images/magecity_0.png" width="256" height="1450"/>
+ </tileset>
+ <tileset firstgid="361" name="collision" tilewidth="32" tileheight="32">
+  <image source="images/collision.png" width="80" height="32"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="96" height="96">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3YMQoEIRAAQaO7bO9j/v89J+wLDNYOtgomH1oQdAwAAABOmPUCAAAAcID3LwAAwBneX0DF/dPSv6V/S/+W/i39W/q39G/p39K/pX9L/5b+Lf1bcziDkvYt/Vv6t/Rv6d/Sv6V/S/+W/i39W7v9P2u+TyzyUrv9rzW/JxZ5KfdPS/+W/+eW9q15YNinIQAAAAAAAAAAAAAAwO0PLlzdrwCQAAA=
+  </data>
+ </layer>
+ <layer name="Obstacles" width="96" height="96">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3aQQ0AIAwEwSIX/wYaTHCBziho9tHXVQEAAAAAAAAAAADwkr3SFwBT+T9Z+mfpDwAAAAAAAADATWevYrOSoz8AAAAAAAAAAAAAAAAAwN8aU8PXtgCQAAA=
+  </data>
+ </layer>
+</map>

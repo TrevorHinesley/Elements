@@ -1,0 +1,15 @@
+I am going home. If you guys work on this at all look at these resources i found. they will help you build the game. Good Luck I'll reconvene when i can. I've created a map with one object if you can get it to scroll well done.
+
+"using tiled and object collision"
+http://slick.cokeandcode.com/wiki/doku.php?id=01_-_tiled_and_maps
+
+"scrolling class for slick example. the code for this goes in the main class"
+https://bitbucket.org/kevglass/slick/src/tip/trunk/Slick/examples/org/newdawn/slick/examples/scroller/Scroller.java
+
+"this is a real implimentation of scrolling like in zelda"
+http://www.java-gaming.org/index.php/topic,24625.
+
+"some things that tell us how to use slick"
+http://thenewboston.org/list.php?cat=54
+
+

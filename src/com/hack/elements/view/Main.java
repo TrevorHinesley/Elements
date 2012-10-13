@@ -7,12 +7,17 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.tiled.*;
+import com.hack.elements.control.FreeObjectController;
+import com.hack.elements.control.ObjectController;
+import com.hack.elements.model.FreeObject;
+import com.hack.elements.model.impl.Direction;
 
 
 public class Main extends BasicGame {
 	
-	Image player = null;
-
+	ObjectController controller;
+	 private TiledMap map;
     public Main() {
 		super("FUCK!");
 		// TODO Auto-generated constructor stub
@@ -26,70 +31,66 @@ public class Main extends BasicGame {
  
          app.setDisplayMode(512, 512, false);
          app.start();
+        
+
+        
+
+
+
+
+         		
     }
-
-	/**
-	 * @param args
-	 */
-
-
-	@Override
-	public void render(GameContainer container, Graphics g)
-			throws SlickException {
-		// TODO Auto-generated method stub
-		float x = 247;
-		float y = 247;
-		player.draw(x, y);
-	}
 
 	@Override
 	public void init(GameContainer container) throws SlickException {
-		// TODO Auto-generated method stub
-		player = new Image("resources/images/player-U.png");
+		controller = new ObjectController();
+		controller.getModel().getHero().setImage(new Image("resources/images/player-U.png"));
+		 container.setVSync(true);
+         map = new TiledMap("resources/test2.tmx");
+
+
+		 
+	}
+	
+	@Override
+	public void render(GameContainer container, Graphics g)
+			throws SlickException {
+		FreeObject hero = controller.getModel().getHero();
+		hero.getImage().draw(hero.getX(), hero.getY());
+		map.render(0, 0);
 	}
 
 	@Override
 	public void update(GameContainer container, int delta)
 			throws SlickException {
 		Input input = container.getInput();
-		 
+		FreeObject hero = controller.getModel().getHero();
+		
         if(input.isKeyDown(Input.KEY_A))
         {
-        	player = new Image("resources/images/player-L.png");
+        	FreeObjectController.move(hero, Direction.WEST, .15f);
+        	hero.setImage(new Image("resources/images/player-L.png"));
         }
- 
         if(input.isKeyDown(Input.KEY_D))
         {
-        	player = new Image("resources/images/player-R.png");
+        	FreeObjectController.move(hero, Direction.EAST, .15f);
+        	hero.setImage(new Image("resources/images/player-R.png"));
         }
  
         if(input.isKeyDown(Input.KEY_W))
         {
-        	player = new Image("resources/images/player-U.png");
+        	FreeObjectController.move(hero, Direction.NORTH, .15f);
+        	hero.setImage(new Image("resources/images/player-U.png"));
         }
             
         if(input.isKeyDown(Input.KEY_S))
         {
-        	player = new Image("resources/images/player-D.png");
+        	FreeObjectController.move(hero, Direction.SOUTH, .15f);
+        	hero.setImage(new Image("resources/images/player-D.png"));
         }
-            
- 
-            
-            
-        
- 
         if(input.isKeyDown(Input.KEY_SPACE))
-        {
-        	player = new Image("resources/images/player-U.png");
-        }
+        { }
         if(input.isKeyDown(Input.KEY_ESCAPE))
-        {
-            
-            
-        }
-        
-		
-	}
-	
-	
+        { }
+	}	
 }

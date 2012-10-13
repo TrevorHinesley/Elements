@@ -1,31 +1,38 @@
 package com.hack.elements.model.impl;
 
+import org.newdawn.slick.Image;
+
 import com.hack.elements.model.FreeObject;
 
 public class Hero implements FreeObject {
 
-	private int x;
-	private int y;
+	private float x;
+	private float y;
 	private int width;
 	private int height;
+	
+	public boolean usesDirection;
+	private Direction facing;
+	
+	private Image image;
 
 	@Override
-	public int getX() {
+	public float getX() {
 		return x;
 	}
 
 	@Override
-	public void setX(int x) {
+	public void setX(float x) {
 		this.x = x;
 	}
 
 	@Override
-	public int getY() {
+	public float getY() {
 		return y;
 	}
 
 	@Override
-	public void setY(int y) {
+	public void setY(float y) {
 		this.y = y;
 	}
 
@@ -47,5 +54,30 @@ public class Hero implements FreeObject {
 	@Override
 	public void setHeight(int height) {
 		this.height = height;
+	}
+	
+	@Override
+	public boolean usesDirection(){
+		return true;
+	}
+	
+	@Override
+	public Direction getFacing() {
+		return facing;
+	}
+	
+	@Override
+	public void setFacing(Direction facing) {
+		this.facing = facing;
+	}
+	
+	@Override
+	public Image getImage() {
+		return image;
+	}
+	
+	@Override
+	public void setImage(Image image) {
+		this.image = image;
 	}
 }
