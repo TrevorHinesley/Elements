@@ -1,0 +1,45 @@
+player sprites.png
+{
+	player-D.png
+	2
+	2
+	16
+	16
+	0
+	0
+	0
+	0
+}
+{
+	player-L.png
+	20
+	2
+	16
+	16
+	0
+	0
+	0
+	0
+}
+{
+	player-R.png
+	38
+	2
+	16
+	16
+	0
+	0
+	0
+	0
+}
+{
+	player-U.png
+	56
+	2
+	16
+	16
+	0
+	0
+	0
+	0
+}
