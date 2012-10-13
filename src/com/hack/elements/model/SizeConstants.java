@@ -8,4 +8,5 @@ public class SizeConstants {
 	
 	public final static int HERO_SIZE = 16;
 
+	public int blah;
 }
