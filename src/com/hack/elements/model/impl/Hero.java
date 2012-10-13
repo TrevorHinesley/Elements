@@ -8,13 +8,8 @@ public class Hero implements FreeObject {
 	private int y;
 	private int width;
 	private int height;
-<<<<<<< HEAD
 	
 	public boolean usesDirection;
-=======
-
-	
->>>>>>> 679e67d378f15973407a1b2e3beefd37e889a81b
 	private Direction facing;
 
 	@Override
@@ -56,14 +51,11 @@ public class Hero implements FreeObject {
 	public void setHeight(int height) {
 		this.height = height;
 	}
-<<<<<<< HEAD
 	
 	@Override
 	public boolean usesDirection(){
 		return true;
 	}
-=======
->>>>>>> 679e67d378f15973407a1b2e3beefd37e889a81b
 	
 	@Override
 	public Direction getFacing() {
