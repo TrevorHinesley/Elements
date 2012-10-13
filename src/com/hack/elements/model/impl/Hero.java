@@ -1,8 +1,8 @@
 package com.hack.elements.model.impl;
 
-import com.hack.elements.model.Character;
+import com.hack.elements.model.FreeObject;
 
-public class Hero implements Character {
+public class Hero implements FreeObject {
 
 	private int x;
 	private int y;
