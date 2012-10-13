@@ -9,7 +9,7 @@ public class Hero implements FreeObject {
 	private int width;
 	private int height;
 	
-	private Direction direction;
+	private Direction facing;
 
 	@Override
 	public int getX() {
@@ -57,11 +57,11 @@ public class Hero implements FreeObject {
 	}
 	
 	@Override
-	public Direction getDirection() {
-		return direction;
+	public Direction getFacing() {
+		return facing;
 	}
 	
-	public void setDirection(Direction direction) {
-		this.direction = direction;
+	public void setFacing(Direction facing) {
+		this.facing = facing;
 	}
 }
