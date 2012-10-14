@@ -26,13 +26,13 @@ import java.util.Map;
 
 public class ElementsGame extends BasicGame {
 	
-	public final static boolean LOGGING_ON = true;
+	public final static boolean LOGGING_ON = false;
 	
 	private FreeObject hero;
 	
 	private TiledMap map;
-	private int viewX;
-	private int viewY;
+	private int frameX;
+	private int frameY;
 	
 	private boolean[][] blockedTiles;
 	
@@ -83,7 +83,9 @@ public class ElementsGame extends BasicGame {
 			updateHeroFacing();
 			
 			//Load map
-			map = new TiledMap("resources/test3.tmx");
+			map = new TiledMap("resources/base-test.tmx");
+			frameX = 0;
+			frameY = 0;
 			
 			//Load blocked tiles
 			blockedTiles = new boolean[map.getWidth()][map.getHeight()];
@@ -123,8 +125,8 @@ public class ElementsGame extends BasicGame {
 	@Override
 	public void render(GameContainer container, Graphics g)
 			throws SlickException {
-		map.render(0, 0, viewX, viewY, SCREEN_WIDTH, SCREEN_HEIGHT);
-		logPrintln("RENDER - MAP - 0, 0, " + viewX + ", " + viewY + ", " + SCREEN_WIDTH + ", " + SCREEN_HEIGHT);
+		map.render(0, 0, frameX * TILES_PER_ROW, frameY * TILES_PER_COLUMN, SCREEN_WIDTH, SCREEN_HEIGHT);
+		logPrintln("RENDER - MAP - 0, 0, " + frameX * SCREEN_WIDTH + ", " + frameY + SCREEN_WIDTH + ", " + SCREEN_WIDTH + ", " + SCREEN_HEIGHT);
 		
 		hero.getImage().draw(hero.getX(), hero.getY());
 		logPrintln("RENDER - HERO - " + hero.getX() + ", " + hero.getY());
@@ -161,7 +163,7 @@ public class ElementsGame extends BasicGame {
 	 *  Natural movement
 	 *  
 	 */
-	private boolean updateHeroPosition(Input input){
+	private void updateHeroPosition(Input input){
 		
 		float prevX = hero.getX();
 		float prevY = hero.getY();
@@ -172,7 +174,7 @@ public class ElementsGame extends BasicGame {
 				input.isKeyDown(Input.KEY_A) &&
 				input.isKeyDown(Input.KEY_S) &&
 				input.isKeyDown(Input.KEY_D)) {	
-			return false;
+			return;
 		} else
 	//WSD - it's the same as just 'D'
 		if(		input.isKeyDown(Input.KEY_W) && 
@@ -229,12 +231,12 @@ public class ElementsGame extends BasicGame {
 	//WS - it's the same as 'YOURE A FUCKING RETARD'
 		if(		input.isKeyDown(Input.KEY_W) && 
 				input.isKeyDown(Input.KEY_S)){	
-			return false;
+			return;
 		} else
 	//AD - it's the same as 'YOURE A FUCKING RETARD'
 		if(		input.isKeyDown(Input.KEY_A) &&
 				input.isKeyDown(Input.KEY_D)){	
-			return false;
+			return;
 		} else
 	//WD
 		if(input.isKeyDown(Input.KEY_W) && input.isKeyDown(Input.KEY_D)) {
@@ -319,14 +321,47 @@ public class ElementsGame extends BasicGame {
 			FreeObjectController.move(hero, Direction.WEST, HERO_NORMAL_SPD);
 		}
 		
+		float futureX = hero.getX();
+		float futureY = hero.getY();
+		
+		int prevXFrame = (Math.round(prevX + (frameX * SCREEN_WIDTH)) + HERO_CENTER_OFFSET) / SCREEN_WIDTH;
+		int currentXFrame = (Math.round(futureX + (frameX * SCREEN_WIDTH)) + HERO_CENTER_OFFSET) / SCREEN_WIDTH;
+		int prevYFrame = (Math.round(prevY + (frameY * SCREEN_HEIGHT)) + HERO_CENTER_OFFSET) / SCREEN_HEIGHT;
+		int currentYFrame = (Math.round(futureY + (frameY * SCREEN_HEIGHT)) + HERO_CENTER_OFFSET) / SCREEN_HEIGHT;
+		
+		if(prevXFrame < currentXFrame)
+		{
+			if(!isBlocked(futureX + (currentXFrame * SCREEN_WIDTH), futureY, hero.getWidth(), hero.getHeight(), Direction.EAST))
+				updateView(Direction.EAST);
+			else
+				hero.setX(prevX);
+			
+		}
+		else if(prevXFrame > currentXFrame)
+		{
+			if(!isBlocked(futureX + (currentXFrame * SCREEN_WIDTH), futureY, hero.getWidth(), hero.getHeight(), Direction.WEST))
+				updateView(Direction.WEST);
+			else
+				hero.setX(prevX);
+		}
+		
+		if(prevYFrame > currentYFrame) 
+		{
+			if(!isBlocked(futureX, futureY + (currentYFrame * SCREEN_HEIGHT), hero.getWidth(), hero.getHeight(), Direction.NORTH))
+				updateView(Direction.NORTH);
+			else
+				hero.setY(prevY);
+		}
+		else if(prevYFrame < currentYFrame) 
+		{
+			if(!isBlocked(futureX, futureY + (currentYFrame * SCREEN_HEIGHT), hero.getWidth(), hero.getHeight(), Direction.SOUTH))
+				updateView(Direction.SOUTH);
+			else
+				hero.setY(prevY);
+		}
+		
+		logPrintln("frame x=" + frameX + " frame y=" + frameY);
 		updateHeroFacing();
-		
-		if(Math.abs(hero.getX() - prevX) > 0.5)
-			return true;
-		if(Math.abs(hero.getY() - prevY) > 0.5)
-			return true;
-		
-		return false;
 		
 	} 
 	
@@ -345,12 +380,12 @@ public class ElementsGame extends BasicGame {
 		if(dir == Direction.NORTH){
 			
 			//Check if map border
-			if(y - 2 < 0)
+			if(y + (frameY * SCREEN_HEIGHT) - 2 < 0)
 				return true;
 			
-			int indexX1 = Math.round(x) / TILE_SIZE;
-			int indexX2 = Math.round(x + w) / TILE_SIZE;
-			int indexY = Math.round(y - 2) / TILE_SIZE;
+			int indexX1 = (Math.round(x) / TILE_SIZE)  + (TILES_PER_ROW * frameX);
+			int indexX2 = (Math.round(x + w) / TILE_SIZE)  + (TILES_PER_ROW * frameX);
+			int indexY = (Math.round(y - 2) / TILE_SIZE) + (TILES_PER_COLUMN * frameY);
 			
 			logPrint("x1=" + indexX1 + " ");
 			logPrint("x2=" + indexX2 + " ");
@@ -361,12 +396,12 @@ public class ElementsGame extends BasicGame {
 		else if (dir == Direction.SOUTH) {
 			
 			//Check if map edge
-			if(y + h + 2 > (map.getHeight() * map.getTileHeight()))
+			if(y + (frameY * SCREEN_HEIGHT) + h + 2 > (map.getHeight() * map.getTileHeight()))
 				return true;
 			
-			int indexX1 = Math.round(x) / TILE_SIZE;
-			int indexX2 = Math.round(x + w) / TILE_SIZE;
-			int indexY = Math.round(y + h + 2) / TILE_SIZE;
+			int indexX1 = (Math.round(x) / TILE_SIZE) + (TILES_PER_ROW * frameX);
+			int indexX2 = (Math.round(x + w) / TILE_SIZE)  + (TILES_PER_ROW * frameX);
+			int indexY = (Math.round(y + h + 2) / TILE_SIZE) + (TILES_PER_COLUMN * frameY);
 			
 			logPrint("x1=" + indexX1 + " ");
 			logPrint("x2=" + indexX2 + " ");
@@ -377,28 +412,56 @@ public class ElementsGame extends BasicGame {
 		else if (dir == Direction.EAST) {
 			
 			//Check if map edge
-			if(	x + w + 2 >= (map.getWidth() * map.getTileWidth()))
+			if(	x + w + (frameX * SCREEN_WIDTH) + 2 >= (map.getWidth() * map.getTileWidth()))
 				return true;
 			
-			int indexX = Math.round(x + w + 2) / TILE_SIZE;
-			int indexY1 = Math.round(y) / TILE_SIZE;
-			int indexY2 = Math.round(y + h) / TILE_SIZE;
+			int indexX = (Math.round(x + w + 2) / TILE_SIZE)  + (TILES_PER_ROW * frameX);
+			int indexY1 = (Math.round(y) / TILE_SIZE) + (TILES_PER_COLUMN * frameY);
+			int indexY2 = (Math.round(y + h) / TILE_SIZE) + (TILES_PER_COLUMN * frameY);
 			
 			return blockedTiles[indexX][indexY1] || blockedTiles[indexX][indexY2];
 		}
 		else if (dir == Direction.WEST) {
 			
 			//Check if map edge
-			if(x - 2 <=  0)
+			if(x + (frameX * SCREEN_WIDTH) - 2 <=  0)
 				return true;
 			
-			int indexX = Math.round(x - 2) / TILE_SIZE;
-			int indexY1 = Math.round(y) / TILE_SIZE;
-			int indexY2 = Math.round(y + h) / TILE_SIZE;
+			int indexX = (Math.round(x - 2) / TILE_SIZE)  + (TILES_PER_ROW * frameX);
+			int indexY1 = (Math.round(y) / TILE_SIZE) + (TILES_PER_COLUMN * frameY);
+			int indexY2 = (Math.round(y + h) / TILE_SIZE) + (TILES_PER_COLUMN * frameY);
 			
 			return blockedTiles[indexX][indexY1] || blockedTiles[indexX][indexY2];
 		}
 		else 
 			return true;
 	} 
+	
+	private void updateView(Direction dir)
+	{
+		if(dir == Direction.NORTH){
+			if(frameY > 0) {
+				frameY--;
+				hero.setY(hero.getY() + SCREEN_HEIGHT);
+			}
+		}
+		else if (dir == Direction.SOUTH) {
+			if(frameY < map.getHeight() -1) {
+				frameY++;
+				hero.setY(hero.getY() - SCREEN_HEIGHT);
+			}
+		}
+		else if (dir == Direction.EAST) {
+			if(frameX < map.getWidth() -1) {
+				frameX++;
+				hero.setX(hero.getX() - SCREEN_WIDTH);
+			}
+		}
+		else if (dir == Direction.WEST) {
+			if(frameX > 0) {
+				frameX--;
+				hero.setX(hero.getX() + SCREEN_WIDTH);
+			}
+		}
+	}
 }
