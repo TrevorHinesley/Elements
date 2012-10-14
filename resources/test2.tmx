@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="96" height="96" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="magecity_0" tilewidth="32" tileheight="32">
+  <properties>
+   <property name="blocked" value="false"/>
+  </properties>
   <image source="images/magecity_0.png" width="256" height="1450"/>
+  <tile id="0">
+   <properties>
+    <property name="blocked" value="false"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="&quot;blocked&quot;" value="&quot;true&quot;"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="tileid" value="&quot;blocked&quot;"/>
+   </properties>
+  </tile>
  </tileset>
  <tileset firstgid="361" name="collision" tilewidth="32" tileheight="32">
+  <properties>
+   <property name="blocked" value="true"/>
+  </properties>
   <image source="images/collision.png" width="80" height="32"/>
  </tileset>
  <layer name="Tile Layer 1" width="96" height="96">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3YQWqDQABAUXHRQhftxbz/eRroJpQKMa396rwHs8uA86OTONO03dsTc440H/5CfR+P/hzU/UbqP598/lnNd+OM88/sft3PrL+ef2bf77mt66/nX029f1+1//Lg59bWX8+/svmHcab5AKyr/5fY07cb6dwF1ngOWvr/nvfPY/Pu2Rn5/Lfm/PdY9N+H39/jcv4L7OnR/Z992NMZmf2npX9L/5b+Lf1b+rf0b+nf0r+lf0v/lv4t/Vv6t5bJd1DSvqV/S/+W/i39W/q39G/p39K/pX9ra/+X23jd40IGtbX/+2187HEhg7L/tPRvOX9uad9a/mGwnYYAAAAAAAAAAAAAAABfPgFQ3rIsAJAAAA==
-  </data>
- </layer>
- <layer name="Obstacles" width="96" height="96">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3cMQrAIBBEUXPc3P8CklZI6wd9D7aXKWatdgwA+Pc+9QsAKOj/lvz3+zJfBwBo2MMA99D5AMBJ/G2Agu4BKvqnJf+W/AEAAAAAAAAA2MkdlJb8AQAAAAAAAAAAAAAAAADONgGgnT1BAJAAAA==
+   H4sIAAAAAAAAA+3YUWqDQBCAYe1DCn1oLuZFcv8L1FIKQRCyO7XjOh/ke8uQzR9do495mtZXk4/G959tHv5C9nFc/TzI7lep/2OOzb8FPz86P6rv7s96uv3q7R6ZH9lz80j7eerrF50f2fZ4b+2/PWZb+0Xnr8b+f4wl2P/V+b1+0fkr2157e/eg3mtodB6Afdn/S+zp7So9d4E9zgP9R+f+89zce+a3nyf9M9vrn0//Y7j+npfnv8CRXt3/OYY9ncrsP/pXpr/+lemvf2X661+Z/vpXpr/+lemvf2WL3yC9f/YaKtNf/8r0178y/fWvTH/9K9N/rP631fsJ1n0Vrf0/V/cTrPsq7D/6V+b5c37/7DVUtvyD7O84Ig0BAAAAAAAAAAAAAAB+fAHowcoWAJAAAA==
   </data>
  </layer>
 </map>

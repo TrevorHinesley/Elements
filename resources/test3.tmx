@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="96" height="96" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="pubdlcnt.php" tilewidth="32" tileheight="32">
+  <properties>
+   <property name="blocked" value="true"/>
+  </properties>
+  <image source="images/pubdlcnt.php.png" width="256" height="1450"/>
+ </tileset>
+ <tileset firstgid="361" name="Grass" tilewidth="32" tileheight="32">
+  <properties>
+   <property name="blocked" value="false"/>
+  </properties>
+  <image source="images/magecity_0.png" width="256" height="1450"/>
+ </tileset>
+ <tileset firstgid="721" name="bricks" tilewidth="32" tileheight="32">
+  <properties>
+   <property name="blocked" value="true"/>
+  </properties>
+  <image source="images/block-32px.png" width="32" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Tile Layer 1" width="96" height="96">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3VsRGAIBAAQbVbyrUjYw0E8ZEBN9iUwXuQtC5LAm7t21nv/czu2rtU732P7k1Hs+jT/Yv1ZtXyvOpf3j83m5p/v/71/SPuhP71nSLa6a//CPSft78ZPO8f2U3/uv6t1ibfSX/9/6ZFf+/v8/ZR/bV/1z9C7+8CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYHwHMc1a1ACQAAA=
+  </data>
+ </layer>
+</map>
