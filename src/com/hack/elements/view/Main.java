@@ -1,5 +1,5 @@
 package com.hack.elements.view;
-
+// this code has its collision algorithm based off of Panos Konstantinidis  code at http://thejavablog.wordpress.com/2008/06/08/using-slick-2d-to-write-a-game/
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
