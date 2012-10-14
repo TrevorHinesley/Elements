@@ -135,7 +135,7 @@ public class Main extends BasicGame {
 
 		if (input.isKeyDown(Input.KEY_D)) {
 			hero.setImage(new Image("resources/images/player-R.png"));
-			if (isBlocked(globalx, globaly))
+			if (isBlocked(globalx + 16, globaly))
 				return;
 			else if (borderTile(cxpos, cypos))
 				return;
@@ -154,7 +154,7 @@ public class Main extends BasicGame {
 			hero.setImage(new Image("resources/images/player-L.png"));
 			if (isBlocked(globalx, globaly))
 				return;
-			else if (borderTile(cxpos, cypos)) {
+			else if (borderTile(cxpos - 8, cypos)) {
 				cxpos = cxpos++;
 				FreeObjectController.moveToPoint(hero, cxpos, cypos);
 			} else if (endOfScreen(cxpos - 1, cypos)) {
@@ -177,7 +177,7 @@ public class Main extends BasicGame {
 //			System.out.println(cypos);
 //			System.out.println(map.getHeight());
 //			System.out.println(map.getTileHeight());
-			if (isBlocked(globalx, globaly - 3)) {
+			if (isBlocked(globalx, globaly - 8)) {
 				return;
 			} else if (borderTile(cxpos, cypos)) {
 				System.out.println(cypos);
@@ -204,7 +204,7 @@ public class Main extends BasicGame {
 		}
 		if (input.isKeyDown(Input.KEY_S)) {
 			hero.setImage(new Image("resources/images/player-D.png"));
-			if (isBlocked(globalx, globaly + 8))
+			if (isBlocked(globalx, globaly + 16))
 				return;
 			else if (borderTile(cxpos, cypos))
 				return;
