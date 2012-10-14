@@ -20,5 +20,14 @@ public class FreeObjectController {
 		fo.setY(fo.getY() + yDir * speed);
 		
 	}
+	public static void moveToPoint(FreeObject fo, int xpos, int ypos){		
+
+
+
+		fo.setX(xpos);
+		fo.setY(ypos);
+	}
+	
+	
 
 }

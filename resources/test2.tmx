@@ -8,12 +8,12 @@
  </tileset>
  <layer name="Tile Layer 1" width="96" height="96">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3YMQoEIRAAQaO7bO9j/v89J+wLDNYOtgomH1oQdAwAAABOmPUCAAAAcID3LwAAwBneX0DF/dPSv6V/S/+W/i39W/q39G/p39K/pX9L/5b+Lf1bcziDkvYt/Vv6t/Rv6d/Sv6V/S/+W/i39W7v9P2u+TyzyUrv9rzW/JxZ5KfdPS/+W/+eW9q15YNinIQAAAAAAAAAAAAAAwO0PLlzdrwCQAAA=
+   H4sIAAAAAAAAA+3YQWqDQABAUXHRQhftxbz/eRroJpQKMa396rwHs8uA86OTONO03dsTc440H/5CfR+P/hzU/UbqP598/lnNd+OM88/sft3PrL+ef2bf77mt66/nX029f1+1//Lg59bWX8+/svmHcab5AKyr/5fY07cb6dwF1ngOWvr/nvfPY/Pu2Rn5/Lfm/PdY9N+H39/jcv4L7OnR/Z992NMZmf2npX9L/5b+Lf1b+rf0b+nf0r+lf0v/lv4t/Vv6t5bJd1DSvqV/S/+W/i39W/q39G/p39K/pX9ra/+X23jd40IGtbX/+2187HEhg7L/tPRvOX9uad9a/mGwnYYAAAAAAAAAAAAAAABfPgFQ3rIsAJAAAA==
   </data>
  </layer>
  <layer name="Obstacles" width="96" height="96">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3aQQ0AIAwEwSIX/wYaTHCBziho9tHXVQEAAAAAAAAAAADwkr3SFwBT+T9Z+mfpDwAAAAAAAADATWevYrOSoz8AAAAAAAAAAAAAAAAAwN8aU8PXtgCQAAA=
+   H4sIAAAAAAAAA+3cMQrAIBBEUXPc3P8CklZI6wd9D7aXKWatdgwA+Pc+9QsAKOj/lvz3+zJfBwBo2MMA99D5AMBJ/G2Agu4BKvqnJf+W/AEAAAAAAAAA2MkdlJb8AQAAAAAAAAAAAAAAAADONgGgnT1BAJAAAA==
   </data>
  </layer>
 </map>
