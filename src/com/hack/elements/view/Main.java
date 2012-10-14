@@ -52,7 +52,6 @@ public class Main extends BasicGame {
 		FreeObject hero = controller.getModel().getHero();
 		map.render(0, 0, mxpos, mypos, screenw, screenh);
 		hero.getImage().draw(hero.getX(), hero.getY());
-
 	}
 
 	public boolean endOfScreen(int xpos, int ypos) {
@@ -66,18 +65,23 @@ public class Main extends BasicGame {
 	}
 
 	public boolean borderTile(int xpos, int ypos) {
+<<<<<<< HEAD
 		if (cxpos == 0 || cxpos == map.getWidth() * map.getTileWidth())
 			return true;
 		if (cypos == 0 || cypos == map.getHeight() * map.getTileHeight())
 			return true;
 
 		return false;
+=======
+		return true;
+>>>>>>> 7d164ad83d86c90cadcf065c17e6f8207f69e47f
 	}
 
 	@Override
 	public void update(GameContainer container, int delta)
 			throws SlickException {
 		Input input = container.getInput();
+<<<<<<< HEAD
 		FreeObject hero = controller.getModel().getHero();
 		cxpos = (int) hero.getX();
 		cypos = (int) hero.getY();
@@ -158,4 +162,35 @@ public class Main extends BasicGame {
 		}
 
 	}
+=======
+		FreeObject hero = controller.getModel().getHero();
+		
+        if(input.isKeyDown(Input.KEY_A))
+        {
+        	FreeObjectController.move(hero, Direction.WEST, 1.4f);
+        	hero.setImage(new Image("resources/images/player-L.png"));
+        }
+        if(input.isKeyDown(Input.KEY_D))
+        {
+        	FreeObjectController.move(hero, Direction.EAST, 1.4f);
+        	hero.setImage(new Image("resources/images/player-R.png"));
+        }
+ 
+        if(input.isKeyDown(Input.KEY_W))
+        {
+        	FreeObjectController.move(hero, Direction.NORTH, 1.4f);
+        	hero.setImage(new Image("resources/images/player-U.png"));
+        }
+            
+        if(input.isKeyDown(Input.KEY_S))
+        {
+        	FreeObjectController.move(hero, Direction.SOUTH, 1.4f);
+        	hero.setImage(new Image("resources/images/player-D.png"));
+        }
+        if(input.isKeyDown(Input.KEY_SPACE))
+        { }
+        if(input.isKeyDown(Input.KEY_ESCAPE))
+        { }
+	}
+>>>>>>> 7d164ad83d86c90cadcf065c17e6f8207f69e47f
 }
