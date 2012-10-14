@@ -8,12 +8,12 @@
  </tileset>
  <layer name="Tile Layer 1" width="96" height="96">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3YMQoEIRAAQaO7bO9j/v89J+wLDNYOtgomH1oQdAwAAABOmPUCAAAAcID3LwAAwBneX0DF/dPSv6V/S/+W/i39W/q39G/p39K/pX9L/5b+Lf1bcziDkvYt/Vv6t/Rv6d/Sv6V/S/+W/i39W7v9P2u+TyzyUrv9rzW/JxZ5KfdPS/+W/+eW9q15YNinIQAAAAAAAAAAAAAAwO0PLlzdrwCQAAA=
+   H4sIAAAAAAAAA+3ZMQrCUBRE0WChnW4k+19f0ktANMmfOKc4pTDv/kLQeZqmecONw2111l//Bvpfs//Wd4Z3O6//N59D/yT6699Mf/2bjervnfRPoL/+zfTXv9kR/fcwuktC/1GN9Lep+dbETU23Jm5qujVxU9OtiZuabk3c1HRr4qamWxM3Nd2auKnp1sRNTbcmbmq6NXFT062Jm5puTdx0pVt//c26qf+Zb6q//g3036/jnv/h6j/+PT9919Fb/5G+AAAAAAAA7+6rR8COVs/VK2AHAAAAAAAAAAAAAAAAAADHWABzMDb/AJAAAA==
   </data>
  </layer>
  <layer name="Obstacles" width="96" height="96">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3aQQ0AIAwEwSIX/wYaTHCBziho9tHXVQEAAAAAAAAAAADwkr3SFwBT+T9Z+mfpDwAAAAAAAADATWevYrOSoz8AAAAAAAAAAAAAAAAAwN8aU8PXtgCQAAA=
+   H4sIAAAAAAAAA+3ZMWrDUAAD0PS4uf8FOpQOJXhobEUieQ/+aJDkweB//7rd7geHvKOd7f8a9u+yf9ez+x99M7y3/zmz/zPP8Zf9u+zfZf8u+3fZv6u1v/f0w/5d9u+yf5f9u+zfldj/ivMpzuz46kzvaLHrYqaUxa6LmVIWuy5mSlnsupgpZbHrYqaUxa6LmVIWuy5mSlnsupgpZbHrYqaUxa6LmVIWuy5mSlnsupgpZbHrYqaUxa6LmVISXc/+s/6k/RPcjXXZv8v+17j6Dtf+Xb+7un/vsC8AAAAAAMAj9ydd9gcAAAAAAAAAAAAAAAAAeG/fNaR1SQCQAAA=
   </data>
  </layer>
 </map>
