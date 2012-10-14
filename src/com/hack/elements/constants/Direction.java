@@ -1,4 +1,4 @@
-package com.hack.elements.model.impl;
+package com.hack.elements.constants;
 
 public enum Direction {
 

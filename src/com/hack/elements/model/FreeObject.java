@@ -2,7 +2,7 @@ package com.hack.elements.model;
 
 import org.newdawn.slick.Image;
 
-import com.hack.elements.model.impl.Direction;
+import com.hack.elements.constants.Direction;
 
 public interface FreeObject {
   public float getX();
