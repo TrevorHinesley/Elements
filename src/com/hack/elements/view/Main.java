@@ -66,10 +66,16 @@ public class Main extends BasicGame {
 
 	public boolean borderTile(int xpos, int ypos) {
 
-		if (cxpos == 0 || cxpos == map.getWidth() * map.getTileWidth())
+		if ((cxpos == 0 && mxpos == 0)|| cxpos == map.getWidth() * map.getTileWidth())
 			return true;
-		if (cypos == 0 || cypos == map.getHeight() * map.getTileHeight())
+//		System.out.println(cypos);
+//		System.out.println(map.getHeight());
+//		System.out.println(map.getTileHeight());
+		if ((cypos == 0 && mypos == 0) || cypos == map.getHeight() * map.getTileHeight())
 			return true;
+//		System.out.println(cypos);
+//		System.out.println(map.getHeight());
+//		System.out.println(map.getTileHeight());
 
 		return false;
 
@@ -123,12 +129,19 @@ public class Main extends BasicGame {
 		}
 		if (input.isKeyDown(Input.KEY_W)) {
 			hero.setImage(new Image("resources/images/player-U.png"));
-			if (borderTile(cxpos, cypos)) {
+			System.out.println(cypos);
+			System.out.println(map.getHeight());
+			System.out.println(map.getTileHeight());
+			if (borderTile(cxpos, cypos)  ) {
+				System.out.println(cypos);
+				System.out.println(map.getHeight());
+				System.out.println(map.getTileHeight());
 				cypos = cypos + 8;
 				FreeObjectController.moveToPoint(hero, cxpos, cypos);
 
 				return;
 			} else if (endOfScreen(cxpos, cypos)) {
+				System.out.println("fuck!");
 				System.out.println(mypos);
 				mypos = (mypos) - (screenh / 32);
 				System.out.println(mypos);
@@ -144,7 +157,7 @@ public class Main extends BasicGame {
 		}
 		if (input.isKeyDown(Input.KEY_S)) {
 			hero.setImage(new Image("resources/images/player-D.png"));
-			if (borderTile(cxpos, cypos))
+			if (borderTile(cxpos, cypos) )
 				return;
 			else if (endOfScreen(cxpos, cypos)) {
 				mypos = (mypos) + (screenh / 32);
